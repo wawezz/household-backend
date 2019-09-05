@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "5bdb2d30-83b0-4b3b-9ea5-03c6d32b3275",
+		"name": "Household",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/BasicCosts/?skip=2&take=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"BasicCosts",
+						""
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "2"
+						},
+						{
+							"key": "take",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bulk update",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\"id\":1077,\"NumberOfCorners\":10,\"QualityGroup\":1,\"AreaGroup\":1700,\"CostPerSquareFoot\":101,\"ModifiedBy\":null,\"ModifiedDate\":null},\n\t{\"id\":1076,\"NumberOfCorners\":10,\"QualityGroup\":1,\"AreaGroup\":1600,\"CostPerSquareFoot\":102,\"ModifiedBy\":null,\"ModifiedDate\":null},\n\t{\"id\":1075,\"NumberOfCorners\":10,\"QualityGroup\":1,\"AreaGroup\":1500,\"CostPerSquareFoot\":103,\"ModifiedBy\":null,\"ModifiedDate\":null},\n\t{\"id\":1074,\"NumberOfCorners\":10,\"QualityGroup\":1,\"AreaGroup\":1400,\"CostPerSquareFoot\":105,\"ModifiedBy\":null,\"ModifiedDate\":null},\n\t{\"id\":1073,\"NumberOfCorners\":10,\"QualityGroup\":1,\"AreaGroup\":1300,\"CostPerSquareFoot\":106,\"ModifiedBy\":null,\"ModifiedDate\":null},\n\t{\"id\":1072,\"NumberOfCorners\":10,\"QualityGroup\":1,\"AreaGroup\":1200,\"CostPerSquareFoot\":108,\"ModifiedBy\":null,\"ModifiedDate\":null},\n\t{\"id\":1071,\"NumberOfCorners\":10,\"QualityGroup\":1,\"AreaGroup\":1100,\"CostPerSquareFoot\":112,\"ModifiedBy\":null,\"ModifiedDate\":null},\n\t{\"id\":1070,\"NumberOfCorners\":10,\"QualityGroup\":1,\"AreaGroup\":1000,\"CostPerSquareFoot\":114,\"ModifiedBy\":null,\"ModifiedDate\":null},\n\t{\"id\":1069,\"NumberOfCorners\":10,\"QualityGroup\":1,\"AreaGroup\":900,\"CostPerSquareFoot\":117,\"ModifiedBy\":null,\"ModifiedDate\":null},\n\t{\"id\":1068,\"NumberOfCorners\":10,\"QualityGroup\":1,\"AreaGroup\":800,\"CostPerSquareFoot\":122,\"ModifiedBy\":null,\"ModifiedDate\":null},\n\t{\"id\":1067,\"NumberOfCorners\":10,\"QualityGroup\":1,\"AreaGroup\":700,\"CostPerSquareFoot\":126,\"ModifiedBy\":null,\"ModifiedDate\":null}\n]"
+				},
+				"url": {
+					"raw": "http://localhost:3000/BasicCosts/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"BasicCosts",
+						"save"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
