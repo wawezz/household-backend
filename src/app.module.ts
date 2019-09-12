@@ -9,10 +9,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     BasicCostsModule,
     TypeOrmModule.forRoot({
       type: 'mssql',
-      host: 'craftsmanbook.database.windows.net',
+      host: 'had592suk1.database.windows.net',
       port: 1433,
       database: 'nae-editor-test',
-      username: 'AdminSA',
+      username: 'naeeditor',
       password: 'Scottishfold11#',
       options: {
         useUTC: true,

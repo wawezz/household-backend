@@ -1,8 +1,8 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity()
+@Entity({name: "BasicCosts"})
 export class BasicCost {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn({name: 'PK__Corners__3214EC078C53B80B'})
   id: number;
 
   @Column()
