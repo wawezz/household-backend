@@ -19,7 +19,7 @@ export class BasicCostsController {
 
   @Get()
   index(@Query() params): Promise<BasicCost[]> {
-    let query = {
+    const query = {
       skip: params.skip || 0,
       take: params.take || 25,
       order: { id: 'DESC' },
@@ -34,5 +34,19 @@ export class BasicCostsController {
     }
 
     return this.basicCostsService.save(data);
+  }
+
+  @Get('priceupdate')
+  priceupdate(@Query() params): Promise<any> {
+    const percent = parseInt(params.percent) || 0;
+
+    if (percent < 1 || percent > 100) {
+      throw new HttpException(
+        'Invalid percent value.',
+        HttpStatus.I_AM_A_TEAPOT,
+      );
+    }
+
+    return this.basicCostsService.priceupdate(percent);
   }
 }

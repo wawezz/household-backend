@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Repository } from 'typeorm';
+import { Repository, ConnectionManager } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { BasicCost } from '../BasicCost.entity';
 import { UpdateResult, DeleteResult } from 'typeorm';
@@ -36,7 +36,18 @@ export class BasicCostsService {
     return await this.basicCostRepository.save(basicCost);
   }
 
-  async delete(id): Promise<DeleteResult> {
+  async priceupdate(percent: number): Promise<any> {
+    return await this.basicCostRepository
+      .createQueryBuilder('priceUpdate')
+      .update()
+      .set({
+        CostPerSquareFoot: () =>
+          `CostPerSquareFoot + (CostPerSquareFoot / ${100 * percent})`,
+      })
+      .execute();
+  }
+
+  async delete(id: number): Promise<DeleteResult> {
     return await this.basicCostRepository.delete(id);
   }
 }
