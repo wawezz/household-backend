@@ -44,6 +44,7 @@ export class BasicCostsService {
         CostPerSquareFoot: () =>
           `CostPerSquareFoot + (CostPerSquareFoot / ${100 * percent})`,
       })
+      .returning(['id'])
       .execute();
   }
 
