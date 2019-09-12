@@ -41,7 +41,8 @@ export class BasicCostsService {
       .createQueryBuilder('priceUpdate')
       .update()
       .set({
-        CostPerSquareFoot: () => `CostPerSquareFoot + (CostPerSquareFoot + 50)`,
+        CostPerSquareFoot: () =>
+          `CostPerSquareFoot + (CostPerSquareFoot / 100 * 10)`,
         ModifiedDate: () => `GETDATE()`,
       })
       .returning(['id'])
