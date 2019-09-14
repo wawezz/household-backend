@@ -49,13 +49,13 @@ export class BasicCostsController {
     }
     console.log(action);
 
-    if (action != '+' && action != '-') {
+    if (action !== 'up' && action !== 'down') {
       throw new HttpException(
         'Invalid action, should be: +/-.',
         HttpStatus.I_AM_A_TEAPOT,
       );
     }
-
-    return this.basicCostsService.priceupdate(percent, action);
+    const actionMath = action === 'up' ? '+' : '-';
+    return this.basicCostsService.priceupdate(percent, actionMath);
   }
 }
