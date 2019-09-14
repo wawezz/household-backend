@@ -47,7 +47,7 @@ export class BasicCostsController {
         HttpStatus.I_AM_A_TEAPOT,
       );
     }
-
+    console.log(action);
     if (action != '+' || action != '-') {
       throw new HttpException(
         'Invalid action, should be: +/-.',
