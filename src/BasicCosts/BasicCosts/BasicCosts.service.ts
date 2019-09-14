@@ -42,7 +42,7 @@ export class BasicCostsService {
       .update()
       .set({
         CostPerSquareFoot: () =>
-          `CostPerSquareFoot + (CostPerSquareFoot / 100 * 10)`,
+          `CostPerSquareFoot + (CostPerSquareFoot / 100 * ${percent})`,
         ModifiedDate: () => `GETDATE()`,
       })
       .returning(['id'])
