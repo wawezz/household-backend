@@ -39,14 +39,22 @@ export class BasicCostsController {
   @Get('priceupdate')
   priceupdate(@Query() params): Promise<any> {
     const percent = parseInt(params.percent) || 0;
+    const action = params.action;
 
-    if (percent < 1 || percent > 100) {
+    if (percent < 1) {
       throw new HttpException(
         'Invalid percent value.',
         HttpStatus.I_AM_A_TEAPOT,
       );
     }
 
-    return this.basicCostsService.priceupdate(percent);
+    if (action !== ('+' || '-')) {
+      throw new HttpException(
+        'Invalid action, should be: +/-.',
+        HttpStatus.I_AM_A_TEAPOT,
+      );
+    }
+
+    return this.basicCostsService.priceupdate(percent, action);
   }
 }

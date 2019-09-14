@@ -36,13 +36,13 @@ export class BasicCostsService {
     return await this.basicCostRepository.save(basicCost);
   }
 
-  async priceupdate(percent: number): Promise<any> {
+  async priceupdate(percent: number, action: string): Promise<any> {
     return await this.basicCostRepository
       .createQueryBuilder('priceUpdate')
       .update()
       .set({
         CostPerSquareFoot: () =>
-          `CostPerSquareFoot + (CostPerSquareFoot / 100 * ${percent})`,
+          `CostPerSquareFoot ${action} (CostPerSquareFoot / 100 * ${percent})`,
         ModifiedDate: () => `GETDATE()`,
       })
       .returning(['id'])
