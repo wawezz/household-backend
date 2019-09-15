@@ -46,7 +46,6 @@ export class BasicCostsController {
       where: where,
     };
 
-    console.log(query);
     return this.basicCostsService.findAll(query);
   }
 
