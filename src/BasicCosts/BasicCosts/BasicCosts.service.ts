@@ -16,6 +16,7 @@ export class BasicCostsService {
       order: query.order,
       take: query.take,
       skip: query.skip,
+      where: query.where,
     });
 
     return {

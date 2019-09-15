@@ -21,15 +21,30 @@ export class BasicCostsController {
   index(@Query() params): Promise<BasicCost[]> {
     const sort = JSON.parse(params.sort);
     const filter = JSON.parse(params.filter);
+    let order = { id: 'DESC' };
+    let where = {};
 
-    console.log(sort);
-    console.log(filter);
+    if (filter) {
+      for (const [key, value] of Object.entries(filter)) {
+        const data = (value as string).split('|');
+        if (data[0] == '=') {
+          where[key] = data[1];
+        }
+      }
+    }
+
+    if (sort) {
+      order = sort;
+    }
 
     const query = {
       skip: params.skip || 0,
       take: params.take || 25,
-      order: { id: 'DESC' },
+      order: order,
+      where: where,
     };
+
+    console.log(query);
     return this.basicCostsService.findAll(query);
   }
 
