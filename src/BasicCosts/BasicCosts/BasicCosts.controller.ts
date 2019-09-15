@@ -19,6 +19,12 @@ export class BasicCostsController {
 
   @Get()
   index(@Query() params): Promise<BasicCost[]> {
+    const sort = JSON.parse(params.sort);
+    const filter = JSON.parse(params.filter);
+
+    console.log(sort);
+    console.log(filter);
+
     const query = {
       skip: params.skip || 0,
       take: params.take || 25,
@@ -47,7 +53,6 @@ export class BasicCostsController {
         HttpStatus.I_AM_A_TEAPOT,
       );
     }
-    console.log(action);
 
     if (action !== 'up' && action !== 'down') {
       throw new HttpException(
