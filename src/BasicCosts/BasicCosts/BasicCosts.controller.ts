@@ -19,8 +19,8 @@ export class BasicCostsController {
 
   @Get()
   index(@Query() params): Promise<BasicCost[]> {
-    const sort = JSON.parse(params.sort);
-    const filter = JSON.parse(params.filter);
+    const sort = params.sort ? JSON.parse(params.sort) : '';
+    const filter = params.filter ? JSON.parse(params.filter) : '';
     let order = { id: 'DESC' };
     let where = {};
 
