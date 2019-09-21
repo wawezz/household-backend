@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity({ name: 'IndirectCostsConstants' })
+@Entity({ name: 'IndirectCostConstants' })
 export class IndirectCost {
   @PrimaryGeneratedColumn()
   Id: number;
