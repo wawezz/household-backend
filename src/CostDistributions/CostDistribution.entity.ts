@@ -29,17 +29,4 @@ export class CostDistribution {
     nullable: true,
   })
   LaborDistribution: number;
-
-  @Column({
-    type: 'nvarchar',
-    nullable: true,
-    length: 100,
-  })
-  ModifiedBy: string;
-
-  @Column({
-    type: 'datetime',
-    nullable: true,
-  })
-  ModifiedDate: string;
 }

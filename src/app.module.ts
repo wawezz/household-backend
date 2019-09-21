@@ -5,6 +5,7 @@ import { BasicCostsModule } from './BasicCosts/BasicCosts.module';
 import { CityConstantsModule } from './CityConstants/CityConstants.module';
 import { CostDistributionsModule } from './CostDistributions/CostDistributions.module';
 import { DemolitionConstantsModule } from './DemolitionConstants/DemolitionConstants.module';
+import { IndirectCostsModule } from './IndirectCosts/IndirectCosts.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
@@ -13,6 +14,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     CityConstantsModule,
     CostDistributionsModule,
     DemolitionConstantsModule,
+    IndirectCostsModule,
     TypeOrmModule.forRoot({
       type: 'mssql',
       host: 'had592suk1.database.windows.net',
