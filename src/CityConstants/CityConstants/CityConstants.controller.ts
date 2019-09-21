@@ -23,7 +23,7 @@ export class CityConstantsController {
       params.sort && params.sort != '[]' ? JSON.parse(params.sort) : '';
     const filter =
       params.filter && params.filter != '[]' ? JSON.parse(params.filter) : '';
-    let order = { id: 'DESC' };
+    let order = { Id: 'DESC' };
     let where = {};
 
     if (filter) {
