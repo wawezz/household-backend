@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity({ name: 'DirectCosts' })
+@Entity({ name: 'DirectCostsTest' })
 export class DirectCost {
   @PrimaryGeneratedColumn()
   Id: number;

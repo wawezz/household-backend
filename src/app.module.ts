@@ -5,6 +5,7 @@ import { BasicCostsModule } from './BasicCosts/BasicCosts.module';
 import { CityConstantsModule } from './CityConstants/CityConstants.module';
 import { CostDistributionsModule } from './CostDistributions/CostDistributions.module';
 import { DemolitionConstantsModule } from './DemolitionConstants/DemolitionConstants.module';
+import { DirectCostsModule } from './DirectCosts/DirectCosts.module';
 import { IndirectCostsModule } from './IndirectCosts/IndirectCosts.module';
 import { UnitCostsModule } from './UnitCosts/UnitCosts.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -15,6 +16,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     CityConstantsModule,
     CostDistributionsModule,
     DemolitionConstantsModule,
+    DirectCostsModule,
     IndirectCostsModule,
     UnitCostsModule,
     TypeOrmModule.forRoot({
