@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { CostDistributionsService } from './CostDistributions/CostDistributions.service';
 import { CostDistributionsController } from './CostDistributions/CostDistributions.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { CostDistribution } from './costDistribution.entity';
+import { CostDistribution } from './CostDistribution.entity';
 
 @Module({
   imports: [TypeOrmModule.forFeature([CostDistribution])],
