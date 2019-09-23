@@ -61,7 +61,7 @@ export class DirectCostsController {
 
   @Post('add')
   add(@Body() data: DirectCost): Promise<DirectCost> {
-    // data.ModifiedDate = moment().format('YYYY-MM-DD HH:mm:ss');
-    return this.directCostsService.create(data);
+    data.ModifiedDate = moment().format('YYYY-MM-DD HH:mm:ss');
+    return this.directCostsService.add(data);
   }
 }

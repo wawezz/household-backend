@@ -25,8 +25,8 @@ export class DirectCostsService {
     };
   }
 
-  async create(directCost: DirectCost): Promise<DirectCost> {
-    return await this.directCostRepository.create(directCost);
+  async add(directCost: DirectCost): Promise<DirectCost> {
+    return await this.directCostRepository.save(directCost);
   }
 
   async update(directCost: DirectCost): Promise<UpdateResult> {
