@@ -57,4 +57,9 @@ export class DirectCostsController {
 
     return this.directCostsService.save(data);
   }
+
+  @Post('add')
+  add(@Body() data: DirectCost): Promise<DirectCost> {
+    return this.directCostsService.create(data);
+  }
 }
