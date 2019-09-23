@@ -10,6 +10,7 @@ import {
   HttpException,
   HttpStatus,
 } from '@nestjs/common';
+import moment from 'moment';
 import { DirectCost } from '../DirectCost.entity';
 import { DirectCostsService } from './DirectCosts.service';
 
@@ -60,6 +61,7 @@ export class DirectCostsController {
 
   @Post('add')
   add(@Body() data: DirectCost): Promise<DirectCost> {
+    data.ModifiedDate = moment().format('YYYY-MM-DD HH:mm:ss');
     return this.directCostsService.create(data);
   }
 }
