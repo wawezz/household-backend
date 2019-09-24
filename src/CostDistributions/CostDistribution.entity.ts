@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToOne } from 'typeorm';
+import { DirectCost } from './../DirectCosts/DirectCost.entity';
 
 @Entity({ name: 'CostDistributions' })
 export class CostDistribution {
@@ -16,7 +17,10 @@ export class CostDistribution {
     type: 'int',
     nullable: false,
   })
-  LineItemId: string;
+  LineItemId: number;
+
+  @OneToOne(type => DirectCost, directCost => directCost.Id)
+  directCost: DirectCost;
 
   @Column({
     type: 'decimal',
