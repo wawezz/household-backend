@@ -1,5 +1,13 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToOne } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  OneToMany,
+  JoinColumn,
+  ManyToOne,
+} from 'typeorm';
 import { DirectCost } from './../DirectCosts/DirectCost.entity';
+import { type } from 'os';
 
 @Entity({ name: 'CostDistributions' })
 export class CostDistribution {
@@ -19,9 +27,6 @@ export class CostDistribution {
   })
   LineItemId: number;
 
-  @OneToOne(type => DirectCost, directCost => directCost.Id)
-  directCost: DirectCost;
-
   @Column({
     type: 'decimal',
     nullable: true,
@@ -33,4 +38,8 @@ export class CostDistribution {
     nullable: true,
   })
   LaborDistribution: number;
+
+  @ManyToOne(type => DirectCost)
+  @JoinColumn({ name: 'LineItemId' })
+  directCost: DirectCost;
 }
