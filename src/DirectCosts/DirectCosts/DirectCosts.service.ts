@@ -17,12 +17,6 @@ export class DirectCostsService {
       take: query.take,
       skip: query.skip,
       where: query.where,
-      join: {
-        alias: 'CompConstants',
-        leftJoinAndSelect: {
-          profile: 'CompConstants.ItemName',
-        },
-      },
     });
 
     return {

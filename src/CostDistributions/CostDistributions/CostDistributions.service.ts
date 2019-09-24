@@ -17,6 +17,12 @@ export class CostDistributionsService {
       take: query.take,
       skip: query.skip,
       where: query.where,
+      join: {
+        alias: 'CompConstants',
+        leftJoinAndSelect: {
+          CompItemName: 'CompConstants.ItemName',
+        },
+      },
     });
 
     return {
